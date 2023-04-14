@@ -1,9 +1,22 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
 		{
-			"path": "pages/index/index",
+			"path": "pages/park/park",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "广场"
+			}
+		},
+		{
+			"path": "pages/product/product",
+			"style": {
+				"navigationBarTitleText": "创造"
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的"
 			}
 		}
 	],
@@ -12,5 +25,29 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#2c2c2c",
+		"selectedColor": "#1296db",
+		"list": [
+			{
+				"pagePath": "pages/park/park",
+				"text": "广场",
+				"iconPath": "static/icon/park.png",
+				"selectedIconPath": "static/icon/park_selected.png"
+			},
+			{
+				"pagePath": "pages/product/product",
+				"text": "创造",
+				"iconPath": "static/icon/product.png",
+				"selectedIconPath": "static/icon/product_selected.png"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"text": "我的",
+				"iconPath": "static/icon/mine.png",
+				"selectedIconPath": "static/icon/mine_selected.png"
+			}
+		]
 	}
 }
