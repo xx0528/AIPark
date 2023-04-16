@@ -1,11 +1,10 @@
 <template>
 	<view class="mine">
-		Mine
+		mine
 	</view>
-	
 </template>
 
-<script>
+<script setup>
 </script>
 
 <style>
