@@ -15,19 +15,28 @@
 			</swiper>
 		</view>
 	</view>
-	<view class="fish-grid">
-		<uni-grid :column="4" :showBorder="false" >
-			<uni-grid-item>
-				<view class="grid-box">鱼</view>
+	
+	<view>
+		<uni-grid :column="4" border-color="#03a9f4" @change="change">
+			<uni-grid-item :index="0">
+				<view class="grid-item-box">
+					<image class="image" src="/static/c1.png" mode="aspectFill" />
+				</view>
 			</uni-grid-item>
-			<uni-grid-item>
-				<view class="grid-box">肉</view>
+			<uni-grid-item :index="1">
+				<view class="grid-item-box">
+					<image class="image" src="/static/c2.png" mode="aspectFill" />
+				</view>
 			</uni-grid-item>
-			<uni-grid-item>
-				<view class="grid-box">蔬</view>
+			<uni-grid-item :index="2">
+				<view class="grid-item-box">
+					<image class="image" src="/static/c3.png" mode="aspectFill" />
+				</view>
 			</uni-grid-item>
-			<uni-grid-item>
-				<view class="grid-box">蛋</view>
+			<uni-grid-item :index="3">
+				<view class="grid-item-box">
+					<image class="image" src="/static/c4.png" mode="aspectFill" />
+				</view>
 			</uni-grid-item>
 		</uni-grid>
 	</view>
@@ -77,4 +86,20 @@ import { reactive } from "vue";
 			justify-content: center;
 		}
 	}
+	.image {
+		width: 25px;
+		height: 25px;
+	}
+	.grid-item-box {
+			flex: 1;
+			// position: relative;
+			/* #ifndef APP-NVUE */
+			display: flex;
+			/* #endif */
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 15px 0;
+		}
+	
 </style>
