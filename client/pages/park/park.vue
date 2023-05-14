@@ -16,30 +16,48 @@
 		</view>
 	</view>
 	
-	<view>
-		<uni-grid :column="4" border-color="#03a9f4" @change="change">
+	<view class="fish-grid">
+		<uni-grid :column="4" :show-border="false">
 			<uni-grid-item :index="0">
-				<view class="grid-item-box">
-					<image class="image" src="/static/c1.png" mode="aspectFill" />
-				</view>
+				<view class="grid-box">鱼</view>
 			</uni-grid-item>
 			<uni-grid-item :index="1">
-				<view class="grid-item-box">
-					<image class="image" src="/static/c2.png" mode="aspectFill" />
-				</view>
+				<view class="grid-box">肉</view>
 			</uni-grid-item>
 			<uni-grid-item :index="2">
-				<view class="grid-item-box">
-					<image class="image" src="/static/c3.png" mode="aspectFill" />
-				</view>
+				<view class="grid-box">蛋</view>
 			</uni-grid-item>
 			<uni-grid-item :index="3">
-				<view class="grid-item-box">
-					<image class="image" src="/static/c4.png" mode="aspectFill" />
-				</view>
+				<view class="grid-box">蔬</view>
 			</uni-grid-item>
 		</uni-grid>
 	</view>
+	
+	<uni-section title="为你推荐" type="line" padding="">
+		<view class="fish-card">
+			<view class="fish-card-left">
+				
+			</view>
+			<view class="fish-card-right">
+				<view class="top">
+					<text class="title">强哥鱼档</text>
+					<text class="integral">5.0分</text>
+				</view>
+				<view class="middle">
+					<view>
+						<text>最低20￥</text>
+					</view>
+					<view>
+						<text>月售90</text>
+						<text>人均20￥</text>
+					</view>
+				</view>
+				<view class="bottom">
+					<uni-tag text="内有躺椅" type="warning" :inverted="true"></uni-tag>
+				</view>
+			</view>
+		</view>
+	</uni-section>
 	
 </template>
 
@@ -76,7 +94,7 @@ import { reactive } from "vue";
 		
 	}
 	
-	.fish-grid{
+	.fish-grid {
 		margin-top: 12upx;
 		.grid-box{
 			display: flex;
@@ -86,20 +104,46 @@ import { reactive } from "vue";
 			justify-content: center;
 		}
 	}
-	.image {
-		width: 25px;
-		height: 25px;
-	}
-	.grid-item-box {
-			flex: 1;
-			// position: relative;
-			/* #ifndef APP-NVUE */
-			display: flex;
-			/* #endif */
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			padding: 15px 0;
+		
+	.fish-card {
+		display: flex;
+		gap: 20upx;
+		height: 240upx;
+		padding: 20upx;
+		box-sizing: border-box;
+		border: 1px solid #ccc;
+		border-radius: 8upx;
+		&-left {
+			width: 200upx;
+			height: 200upx;
+			background: red;
+			border-radius: 8upx;
 		}
-	
+		&-right {
+			flex: 1;
+			.top {
+				.title {
+					font-weight: 600;
+				}
+				.intergral {
+					color: #8e8e8e;
+					font-size: 12px;
+					margin-left: 20upx;
+				}
+				.middle {
+					margin-top: 30upx;
+					display: flex;
+					justify-content: space-between;
+					color: #8e8e8e;
+					font-size: 12upx;
+					text+text {
+						margin-left: 20upx;
+					}
+				}
+				.bottom {
+					margin-top: 34upx;
+				}
+			}
+		}
+	}
 </style>
