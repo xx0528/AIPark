@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+__debug_bin
+!*.example
+/config.yaml
+*.log
+paopao-ce*
+/release
+/data
+/custom
+/.custom
