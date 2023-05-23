@@ -176,12 +176,33 @@ PaoPao主要由以下优秀的开源项目/工具构建
     sudo apt-get install make
     #安装 go
     sudo wget -c https://dl.google.com/go/go1.20.4.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+
     #设置环境变量
     export PATH=$PATH:/usr/local/go/bin
     #重载环境变量
     source ~/.profile
+
+    #ubuntu系统
+    export GOPATH=$HOME/go
+    export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+    source ~/.bashrc
+
     go version
 
+    装了子系统 在cmd里运行 wsl 就进入子系统了
+    使用linux子系统 在子系统里进入项目目录 运行 code .
+    wsl `code .` Command 'code' not found...
+    原因是 wsl 没有配置与 vscode 相关的环境变量
+    
+    #windows环境变量配置
+      将vscode目录  G:\Program Files\Microsoft VS Code\bin
+      配置到windwos的环境变量
+    #linux环境变量配置
+      export PATH="$PATH:/mnt/你的 vscode 在 windows 上的地址" # 添加 code 到环境变量
+      windows目录有空格的情况
+      export PATH="$PATH:'/mnt/G/Program Files/Microsoft VS Code'"
+    到项目目录 code . 就自动用vscode打开项目了
+    
     #windows还可下载mingw-64
     [https://sourceforge.net/projects/mingw-w64/files](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/sjlj/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0.7z/download)
     #配置了环境变量就可以用make了
@@ -193,6 +214,9 @@ PaoPao主要由以下优秀的开源项目/工具构建
     redis-cli --version
     sudo service redis-server start
 
+    #root下 code命令不好使 ~/.profile 里添加
+    alias code="code"
+    alias sudo="sudo "
     ```
 
 #### 前端
